@@ -17,6 +17,7 @@ COPY . /flexget
 RUN pip install -U pip && \
     pip wheel -e /flexget && \
     pip wheel 'transmission-rpc>=3.0.0,<4.0.0' && \
+    pip wheel 'python-telegram-bot==12.8' && \
     pip wheel deluge-client && \
     pip wheel cloudscraper
 
@@ -41,6 +42,7 @@ RUN pip install -U pip && \
                 -f /wheels \
                 FlexGet \
                 'transmission-rpc>=3.0.0,<4.0.0' \
+                'python-telegram-bot==12.8' \
                 deluge-client \
                 cloudscraper && \
     rm -rf /wheels
